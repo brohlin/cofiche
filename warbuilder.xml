@@ -1,0 +1,18 @@
+<project name="cofiche" basedir="c:\users\robert.rohlin\workspace\cofiche" default="default">
+ 
+	<target name="default" depends="buildwar,deploy"></target>
+ 		
+	<target name="buildwar">
+		<war basedir="c:\users\robert.rohlin\workspace\cofiche" destfile="cofiche.war" webxml="c:\users\robert.rohlin\workspace\cofiche\WEB-INF\web.xml">
+			<webinf dir="WEB-INF/">
+				<include name="**/*.jar, **/*.class" />
+			</webinf>		
+		</war>
+	</target>
+ 
+	
+	<target name="deploy">
+		<move file="cofiche.war" todir="c:\apache-tomcat-7.0.63\webapps" />
+	</target>
+ 
+</project>
